@@ -1,0 +1,17 @@
+<h1>Hi, <%= @user.name.capitalize %></h1>
+
+<h1> Welcome to the Elevate Medical Fitness Application </h1>
+<h3> Please choose a task: </h3><br>
+
+<%= radio_button_tag(:age, "child") %>
+<%= label_tag(:age_child, "Add a new Patient") %>
+<%= radio_button_tag(:age, "adult") %>
+<%= label_tag(:age_adult, "Review a Patient Profile") %>
+<%= radio_button_tag(:age, "adult") %>
+<%= label_tag(:age_adult, "Edit a current Patient") %>
+<%= radio_button_tag(:age, "adult") %>
+<%= label_tag(:age_adult, "Generate a Patient Report") %>
+
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+<% end %>
