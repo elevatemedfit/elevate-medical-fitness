@@ -1,8 +1,12 @@
 class PatientsController < ApplicationController
-    before_action :current_patient, :set_bmi, :age, :comprehensive_health_rating, except: %i[new create index]
+    
 
     def new
         @patient = Patient.new
+    end
+
+    def show
+        @patient = Patient.find(params[:id])
     end
 
     def create
@@ -35,29 +39,6 @@ class PatientsController < ApplicationController
     end
 
     private
-
-    def current_patient
-        @patient = Patient.find(params[:id])
-    end
-
-    def age
-        now = Time.now.utc.to_date
-        age = now.year - @patient.date.year - ((now.month > @patient.date.month || (now.month == @patient.date.month && now.day >= @patient.date.day)) ? 0 : 1)
-        @patient.update(age: age)
-    end
-
-    def set_bmi
-        num = 730 * @patient.weight/@patient.height ** 2
-        @patient.update(bmi: num) 
-    end
-
-    def comprehensive_health_rating
-        one = 0.8 * (100 - @patient.bmi)
-        two = 0.2 * (150 - @patient.age)
-        three = 0.2 * (@patient.active_minutes)
-        health_score = (one + two + three).round
-        @patient.update(health_score: health_score)
-    end
 
     def patient_params
         params.require(:patient).permit(:name,
