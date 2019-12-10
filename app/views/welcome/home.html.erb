@@ -3,15 +3,18 @@
 <h1> Welcome to the Elevate Medical Fitness Application </h1>
 <h3> Please choose a task: </h3><br>
 
-<%= radio_button_tag(:age, "child") %>
-<%= label_tag(:age_child, "Add a new Patient") %>
-<%= radio_button_tag(:age, "adult") %>
-<%= label_tag(:age_adult, "Review a Patient Profile") %>
-<%= radio_button_tag(:age, "adult") %>
-<%= label_tag(:age_adult, "Edit a current Patient") %>
-<%= radio_button_tag(:age, "adult") %>
-<%= label_tag(:age_adult, "Generate a Patient Report") %>
+<%= link_to "Create a new Patient", new_patient_path %><br />
+<p>
+<%= link_to "Search for a Patient", patients_path %><br />
+<p>
+<%= link_to "Edit a  current Patient", patients_path %><br />
+<p>
+<%= link_to "Generate a Patient Report", patients_path %><br />
+<p>
+<%= link_to "Remove Patient from System", patients_path %><br />
+
+
 
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-  <input type=submit value='logout'>
+<input type=submit value='logout'>
 <% end %>

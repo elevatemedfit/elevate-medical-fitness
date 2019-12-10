@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date: 2019-11-22 08:31:44
+  physician: MyString
+  condition: MyString
+  height: 1
+  weight: 1
+  step_count: 1
+  cardio_fitness_level: 1
+  caloric_burn: 1
+  distance: 1
+  active_minutes: 1
+  precautions: MyString
+
+two:
+  name: MyString
+  date: 2019-11-22 08:31:44
+  physician: MyString
+  condition: MyString
+  height: 1
+  weight: 1
+  step_count: 1
+  cardio_fitness_level: 1
+  caloric_burn: 1
+  distance: 1
+  active_minutes: 1
+  precautions: MyString
